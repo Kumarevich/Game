@@ -1,0 +1,33 @@
+public class SimpleDotComTestDrive {
+     
+    
+    
+    public static void main (String[] args){
+        SimpleDotCom dot=new SimpleDotCom();
+
+        int num=1;
+        int[] location={2,3,4};
+        
+        dot.setLocationCells(location);
+        while (num<5){
+        String userGuess = Integer.toString(num);
+        
+        String result = dot.checkYourself(userGuess);
+        
+        String testResult="Неудача";
+        
+        if (num==1 && result.equals("Мимо")) {
+            testResult="Тест мимо пройден";
+        } else if (result.equals("Попал")) {
+                testResult="Тест попал пройден";
+        } else if (result.equals("Потопил")) {
+                testResult="Тест потопил пройден";
+        }
+        
+        System.out.println("userGuess=" + num);
+        System.out.println(testResult);
+        num=num+1;
+    }
+            
+}
+}
